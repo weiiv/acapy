@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="https://raw.githubusercontent.com/hyperledger/aries-rfcs/main/collateral/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -726,6 +726,34 @@
     
   
     The Admin API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/OAuthResourceServer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OAuth 2.0 Resource Server
   
 
     
@@ -3234,7 +3262,7 @@ needed and this document describes those activities.</p>
 and mkdocs configuration.</p>
 <p>When the GitHub Action fires, it runs a container that carries out the following steps:</p>
 <ul>
-<li>Checks out the triggering branch, either <code>main</code> or <code>docs-v&lt;version&gt;</code> (e.g <code>docs-v1.6.0</code>).</li>
+<li>Checks out the triggering branch, either <code>main</code> or <code>docs-v&lt;version&gt;</code> (e.g <code>docs-v1.7.0</code>).</li>
 <li>Runs the script <a href="https://github.com/openwallet-foundation/acapy/blob/main/scripts/prepmkdocs.sh">scripts/prepmkdocs.sh</a>, which moves and updates some of the
   markdown files so that they fit into the generated site. See the comments in
   the scripts for details about the copying and editing done via the script. In
@@ -3305,7 +3333,7 @@ the GitHub Action to do this automatically, but its not there yet.</p>
 <li>Check your <code>git status</code> and make sure there are no changes in the branch --
   e.g., new files that shouldn't be added to the <code>gh-pages</code> branch. If there are
   any -- delete the files so they are not added.</li>
-<li>Remove the folder for the RC.  For example <code>rm -rf 1.6.0rc0</code></li>
+<li>Remove the folder for the RC.  For example <code>rm -rf 1.7.0rc0</code></li>
 <li>Edit the <code>versions.json</code> file and remove the reference to the RC release in
   the file.</li>
 <li>Push the changes via a PR to the ACA-Py <code>gh-pages</code> branch (don't PR them into
@@ -3408,10 +3436,10 @@ the GitHub Action to do this automatically, but its not there yet.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.footer", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "toc.follow"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.footer", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

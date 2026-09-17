@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="https://raw.githubusercontent.com/hyperledger/aries-rfcs/main/collateral/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -726,6 +726,34 @@
     
   
     The Admin API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/OAuthResourceServer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OAuth 2.0 Resource Server
   
 
     
@@ -3115,7 +3143,7 @@ a major, minor or patch release, per <a href="https://semver.org/">semver</a> ru
 <p>Once ready to do a release, create a local branch that includes the following updates:</p>
 <ol>
 <li>
-<p>Create a local PR branch from an updated <code>main</code> branch, e.g. "1.6.0".</p>
+<p>Create a local PR branch from an updated <code>main</code> branch, e.g. "1.7.0".</p>
 </li>
 <li>
 <p>See if there are any Document Site <code>mkdocs</code> changes needed. Run the script
@@ -3191,11 +3219,11 @@ a major, minor or patch release, per <a href="https://semver.org/">semver</a> ru
    errors should be fixed in the code.</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>docs<span class="p">;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>generated<span class="p">;</span><span class="w"> </span>sphinx-apidoc<span class="w"> </span>-f<span class="w"> </span>-M<span class="w"> </span>-o<span class="w">  </span>./generated<span class="w"> </span>../acapy_agent/<span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>../acapy_agent/<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*tests*&#39;</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>docs<span class="p">;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>generated<span class="p">;</span><span class="w"> </span>sphinx-apidoc<span class="w"> </span>-f<span class="w"> </span>-M<span class="w"> </span>-o<span class="w">  </span>./generated<span class="w"> </span>../acapy_agent/<span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>../acapy_agent/<span class="w"> </span>-name<span class="w"> </span><span class="s1">'*tests*'</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">cd</span><span class="w"> </span>docs<span class="p">;</span><span class="w"> </span>sphinx-build<span class="w"> </span>-b<span class="w"> </span>html<span class="w"> </span>-a<span class="w"> </span>-E<span class="w"> </span>-c<span class="w"> </span>./<span class="w"> </span>./<span class="w"> </span>./_build<span class="p">;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
 </code></pre></div>
 <p>Sphinx can be run with docker -- at least the first step.  Here is the command to use:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span><span class="w"> </span>docs<span class="p">;</span><span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>../docker_agent<span class="w"> </span>.<span class="p">;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>generated<span class="p">;</span><span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span>.:/docs<span class="w"> </span>sphinxdoc/sphinx<span class="w"> </span>sphinx-apidoc<span class="w"> </span>-f<span class="w"> </span>-M<span class="w"> </span>-o<span class="w">  </span>./generated<span class="w"> </span>./acapy_agent/<span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>./acapy_agent/<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*tests*&#39;</span><span class="k">)</span><span class="p">;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>docker_agent<span class="p">;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span><span class="w"> </span>docs<span class="p">;</span><span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>../docker_agent<span class="w"> </span>.<span class="p">;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>generated<span class="p">;</span><span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span>.:/docs<span class="w"> </span>sphinxdoc/sphinx<span class="w"> </span>sphinx-apidoc<span class="w"> </span>-f<span class="w"> </span>-M<span class="w"> </span>-o<span class="w">  </span>./generated<span class="w"> </span>./acapy_agent/<span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>./acapy_agent/<span class="w"> </span>-name<span class="w"> </span><span class="s1">'*tests*'</span><span class="k">)</span><span class="p">;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>docker_agent<span class="p">;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
 </code></pre></div>
 <p>For the build test, the RTD Sphinx theme needs to be added to the docker image, and I've not figured out that yet.</p>
 <ol>
@@ -3219,7 +3247,9 @@ a major, minor or patch release, per <a href="https://semver.org/">semver</a> ru
 </li>
 </ol>
 <p>Command: <code>cd acapy_agent;../scripts/generate-open-api-spec;cd ..</code></p>
-<p>Folders may not be cleaned up by the script, so the following can be run, likely with <code>sudo</code> -- <code>rm -rf open-api/.build</code>. The folder is <code>.gitignore</code>d, so there is not a danger they will be pushed, even if they are not deleted.</p>
+<p>Folders may not be cleaned up by the script, so the following can be run,
+   likely with <code>sudo</code> -- <code>rm -rf open-api/.build</code>. The folder is <code>.gitignore</code>d,
+   so there is not a danger they will be pushed, even if they are not deleted.</p>
 <ol>
 <li>
 <p>Double check all of these steps above, and then submit a PR from the branch.
@@ -3258,20 +3288,20 @@ a major, minor or patch release, per <a href="https://semver.org/">semver</a> ru
 <p>Published images are automatically tagged with multiple tags for flexibility:</p>
 <ul>
 <li>
-<p><strong>Regular Releases</strong> (e.g., <code>1.6.0</code>):</p>
+<p><strong>Regular Releases</strong> (e.g., <code>1.7.0</code>):</p>
 <ul>
-<li><code>py3.12-1.6.0</code> - Python version specific tag</li>
-<li><code>1.6.0</code> - Semantic version tag</li>
-<li><code>1.6</code> - Major.minor tag (moves to latest patch release)</li>
+<li><code>py3.12-1.7.0</code> - Python version specific tag</li>
+<li><code>1.7.0</code> - Semantic version tag</li>
+<li><code>1.7</code> - Major.minor tag (moves to latest patch release)</li>
 <li><code>latest</code> - Only assigned if this is the highest semantic version</li>
 </ul>
 </li>
 <li>
-<p><strong>Release Candidates</strong> (e.g., <code>1.6.0rc0</code>):</p>
+<p><strong>Release Candidates</strong> (e.g., <code>1.7.0rc0</code>):</p>
 <ul>
-<li><code>py3.12-1.6.0rc0</code> - Python version specific RC tag</li>
-<li><code>1.6.0rc0</code> - Semantic version RC tag</li>
-<li><strong>Note</strong>: RC releases do NOT receive major.minor (<code>1.6</code>) or <code>latest</code> tags</li>
+<li><code>py3.12-1.7.0rc0</code> - Python version specific RC tag</li>
+<li><code>1.7.0rc0</code> - Semantic version RC tag</li>
+<li><strong>Note</strong>: RC releases do NOT receive major.minor (<code>1.7</code>) or <code>latest</code> tags</li>
 </ul>
 </li>
 </ul>
@@ -3280,7 +3310,7 @@ a major, minor or patch release, per <a href="https://semver.org/">semver</a> ru
    example, if version <code>0.12.5</code> is released after <code>1.3.0</code>, the <code>latest</code> tag will
    remain on <code>1.3.0</code> because <code>1.3.0 &gt; 0.12.5</code> in semantic version ordering.</p>
 <p><strong>LTS (Long Term Support) Releases:</strong></p>
-<p>LTS versions receive additional tags (e.g., <code>py3.12-0.12-lts</code>) that move to the
+<p>LTS versions receive additional tags (e.g., <code>py3.12-1.6-lts</code>) that move to the
    latest patch release in that LTS line. LTS versions are configured in
    <code>.github/lts-versions.txt</code>. See <code>.github/LTS-README.md</code> for more details.</p>
 <p>Additional information about the container image publication process can be
@@ -3292,7 +3322,7 @@ a major, minor or patch release, per <a href="https://semver.org/">semver</a> ru
 <ol>
 <li>
 <p>When a new release is tagged, create a new branch at the same commit with
-    the branch name in the format <code>docs-v&lt;version&gt;</code>, for example, <code>docs-v1.6.0rc0</code>.
+    the branch name in the format <code>docs-v&lt;version&gt;</code>, for example, <code>docs-v1.7.0</code>.
     The creation of the branch triggers the execution of the <a href="https://github.com/openwallet-foundation/acapy/blob/main/.github/workflows/publish-docs.yml">publish-docs</a>
     GitHub Action which generates the documentation for the new release,
     publishing it at <a href="https://aca-py.org">https://aca-py.org</a>. The GitHub Action also executes when
@@ -3300,6 +3330,15 @@ a major, minor or patch release, per <a href="https://semver.org/">semver</a> ru
     branch documentation. Additional information about that documentation
     publishing process and some related maintenance activities that are needed
     from time to time can be found in the <a href="../Managing-ACA-Py-Doc-Site/">Managing the ACA-Py Documentation Site</a> document.</p>
+</li>
+<li>
+<p>Perform local testing of an RC release using <a href="https://github.com/openwallet-foundation/acapy-plugins">ACA-Py
+    Plugins</a>. Once a
+    Release Candidate (RC) has been published, a script in the <a href="https://github.com/openwallet-foundation/acapy-plugins">ACA-Py
+    Plugins</a> repo
+    <code>test_acapy_version.py</code> can be run locally to test the release artifacts with all
+    of the plugins. See the documentation about this in the <a href="https://github.com/openwallet-foundation/acapy-plugins/blob/main/README.md#testing-an-aca-py-release-candidate">ACA-Py Plugins
+    README</a></p>
 </li>
 <li>
 <p>Update the <a href="https://aries-cloud-agent-python.readthedocs.io/en/latest/">ACA-Py Read The Docs site</a> by logging into Read The Docs
@@ -3403,10 +3442,10 @@ a major, minor or patch release, per <a href="https://semver.org/">semver</a> ru
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.footer", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "toc.follow"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.footer", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
