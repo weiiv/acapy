@@ -804,6 +804,8 @@ class AskarWallet(BaseWallet):
             raise WalletError("Message not provided")
         if not from_verkey:
             raise WalletError("Verkey not provided")
+        if (sig := await self._get_external_signature(message, from_verkey)) is not None:
+            return sig
         try:
             keypair = await self._session.handle.fetch_key(from_verkey)
             if not keypair:

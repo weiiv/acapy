@@ -9,6 +9,7 @@ from .did_info import DIDInfo, KeyInfo
 from .did_method import SOV, DIDMethod
 from .error import WalletError
 from .key_type import KeyType
+from .signer_registry import SignerRegistry
 
 
 class BaseWallet(ABC):
@@ -336,6 +337,8 @@ class BaseWallet(ABC):
     ) -> bytes:
         """Sign message(s) using the private key associated with a given verkey.
 
+        Implementations should try `_get_external_signature` first.
+
         Args:
             message: The message(s) to sign
             from_verkey: Sign using the private key related to this verkey
@@ -344,6 +347,52 @@ class BaseWallet(ABC):
             The signature
 
         """
+
+    async def _get_external_signature(
+        self, message: Union[List[bytes], bytes], from_verkey: str
+    ) -> Optional[bytes]:
+        """Sign via a registered `Signer` when the DID delegates signing.
+
+        Args:
+            message: The message(s) to sign
+            from_verkey: Sign using the key related to this verkey
+
+        Returns:
+            The external signature, if any; `None` to sign in-wallet instead.
+
+        Raises:
+            WalletError: If the named signer is unregistered or `key_ref` is missing.
+
+        """
+        try:
+            did_info = await self.get_local_did_for_verkey(from_verkey)
+        except Exception:
+            # A key without DID info has no external signer; sign in-wallet.
+            return None
+
+        signer_name = (did_info.metadata or {}).get("signer")
+        if not signer_name:
+            return None
+
+        session = getattr(self, "session", None)
+        registry: Optional[SignerRegistry] = (
+            session.inject_or(SignerRegistry) if session else None
+        )
+        signer = registry.get(signer_name) if registry else None
+        if signer is None:
+            raise WalletError(
+                f"DID {did_info.did} requires signer {signer_name}; "
+                f"registered signers: {registry.names() if registry else []}"
+            )
+
+        key_ref = (did_info.metadata or {}).get("key_ref")
+        if not key_ref:
+            raise WalletError(
+                f"DID {did_info.did} requires signer {signer_name} "
+                "but metadata is missing key_ref"
+            )
+
+        return await signer.sign(key_ref, message, did_info.key_type)
 
     @abstractmethod
     async def verify_message(

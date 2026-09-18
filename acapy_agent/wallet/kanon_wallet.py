@@ -1081,6 +1081,8 @@ class KanonWallet(BaseWallet):
         if not from_verkey:
             LOGGER.error(ERR_VERKEY_NOT_PROVIDED)
             raise WalletError(ERR_VERKEY_NOT_PROVIDED)
+        if (sig := await self._get_external_signature(message, from_verkey)) is not None:
+            return sig
         try:
             LOGGER.debug("Fetching key for verkey: %s", from_verkey)
             keypair = await _call_askar(
